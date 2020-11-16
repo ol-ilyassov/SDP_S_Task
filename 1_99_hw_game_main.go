@@ -307,7 +307,7 @@ func initGame() {
 	}
 	home := &Room{
 		name:              "домой",
-		description:       "ты дома",
+		description:       "ты в доме",
 		lookAroundFormat:  "%s%s. можно пройти - %s",
 		activeObjects:     nil,
 		stock:             nil,
@@ -350,7 +350,7 @@ func initGame() {
 	}
 
 	hall.allConnectedRooms = []BaseRoom{kitchen, privateRoom, street}
-	home.allConnectedRooms = hall.allConnectedRooms
+	home.allConnectedRooms = []BaseRoom{kitchen, privateRoom, street}
 	kitchen.allConnectedRooms = []BaseRoom{hall}
 	privateRoom.allConnectedRooms = []BaseRoom{hall}
 	street.allConnectedRooms = []BaseRoom{home}
